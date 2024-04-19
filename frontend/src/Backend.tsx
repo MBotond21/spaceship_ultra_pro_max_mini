@@ -22,12 +22,28 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-import { doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc, addDoc, collection, getDoc, getCountFromServer, getDocs } from "firebase/firestore";
 
-// Add a new document in collection "cities"
-await setDoc(doc(db, "cities", "LA"), {
-  name: "Los Angeles",
-  state: "CA",
-  country: "USA"
-});
+export async function AddNewData(name: string) {
+  try {
+    const docRef = await addDoc(collection(db, "users"), {
+      first: name,
+      last: "Lovelace",
+      born: 1815
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+export async function ListData() {
+
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+
+}
 
