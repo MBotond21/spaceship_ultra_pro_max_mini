@@ -1,12 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 
-export function Home() {
+export function Main() {
     return (
         <>
             <Container>
                 <Row>
                     <Col>
-                        <h1>Home</h1>
+                        <h1>Main Content</h1>
                     </Col>
                 </Row>
             </Container>
