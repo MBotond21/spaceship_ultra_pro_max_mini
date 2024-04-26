@@ -1,12 +1,13 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { Cards } from "../components/Cards";
 
 export function Main() {
     return (
         <>
             <Container>
                 <Row>
-                    <Col>
-                        <h1>Main Content</h1>
+                    <Col sm={4}>
+                        <Cards img="https://cdn.mos.cms.futurecdn.net/qTmvroik2NtHVGsfCHyyxF-650-80.jpg.webp" title="SpaceRocket" description="Lorem ipsun"/>
                     </Col>
                 </Row>
             </Container>
