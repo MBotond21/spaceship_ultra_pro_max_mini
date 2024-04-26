@@ -24,7 +24,7 @@ const db = getFirestore(app);
 
 import { doc, setDoc, addDoc, collection, getDoc, getCountFromServer, getDocs } from "firebase/firestore";
 
-export async function AddNewData(name : string, weight: number, height: number, diameter: number, trust: number, propellant: string) {
+export async function AddNewData(name : string, weight: number, height: number, diameter: number, trust: number, propellant: string, imgurl: string) {
   try {
     const docRef = await addDoc(collection(db, "spacesticks"), {
       name: "test",
@@ -32,7 +32,8 @@ export async function AddNewData(name : string, weight: number, height: number, 
       height: 0,
       diameter: 0,
       trust: 0,
-      propellant: "test"
+      propellant: "test",
+      imgurl: "image link"
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
