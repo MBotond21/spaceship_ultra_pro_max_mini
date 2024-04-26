@@ -1,0 +1,7 @@
+.card{
+    transition: all 1s ease-in-out;
+}
+
+.clicked{
+    width: 200%;
+}
