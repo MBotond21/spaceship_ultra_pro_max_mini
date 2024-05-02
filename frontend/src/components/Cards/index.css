@@ -1,7 +1,28 @@
 .card{
-    transition: all 1s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
+
 
 .clicked{
     width: 200%;
+}
+
+.clicked .right{
+    width: 100%;
+}
+
+.left{
+    width: 100%;
+}
+
+.right{
+    width: 0%;
+}
+
+.card img{
+    width: 100%;
+    flex-shrink: 0;
+    margin-Right: 10px;
 }
