@@ -1,0 +1,9 @@
+.container-fluid{
+    width: 90% !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+}
+
+.row{
+    margin-bottom: 0.4rem;
+}
