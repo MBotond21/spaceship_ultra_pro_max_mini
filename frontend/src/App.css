@@ -1,3 +1,7 @@
+body{
+    background-color: #eaeff3 !important;
+}
+
 .container-fluid{
     width: 90% !important;
     margin-left: 5% !important;
