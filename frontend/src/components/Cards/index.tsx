@@ -19,11 +19,11 @@ export function Cards(props: Props) {
 
   return (
     <>
-      <Card id={props.id} onClick={ handleOpen }>
-        <div className="left">
-          <Card.Img src={props.img} />
+      <Card id={props.id} onClick={handleOpen}>
+        <Card.Img variant="top" src={props.img} />
+        <Card.Body>
           <Card.Title>{props.title}</Card.Title>
-        </div>
+        </Card.Body>
       </Card>
       <Modal show={open} onHide={handleClose}>
         <Modal.Header closeButton>
