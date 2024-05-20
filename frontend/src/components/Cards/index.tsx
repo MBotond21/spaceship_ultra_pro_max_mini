@@ -1,29 +1,40 @@
 import "./index.css";
 import { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Modal, Button } from 'react-bootstrap';
+
 
 interface Props{
   id: string,
   title: string,
   description: string,
   img: string,
-  collapse: () =>  void,
 }
 
 export function Cards(props: Props){
+  const [show, setShow] = useState(false);
 
-    const [open, setOpen] = useState(false); 
-
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     return (
-        <Card id={props.id}  onClick={(event: React.MouseEvent<HTMLButtonElement>) => { props.collapse(); setOpen(!open); event.currentTarget.classList.contains("clicked")? event.currentTarget.classList.remove("clicked"): event.currentTarget.classList.add("clicked");}}>
+    <>
+        <Card  onClick={handleShow}>
           <div className="left">
             <Card.Img src={props.img}/>
             <Card.Title>{props.title}</Card.Title>
           </div> 
-          <div className="right">
-            {open && <Card.Text>{props.description}</Card.Text>}
-          </div> 
-          
         </Card>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{props.id}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       );
 }
