@@ -1,12 +1,25 @@
-.card{
-    display: flex;
-    flex-direction: row;
+.card-body{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
     width: 100%;
-    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.65);
+    transition: all 0.3s ease-in-out;
 }
 
-.card img{
-    width: 100%;
-    flex-shrink: 0;
-    margin-Right: 10px;
+.card-title{
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .card-body{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.card:hover .card-title{
+    font-weight: 800;
+    letter-spacing: 0.1em;
 }
