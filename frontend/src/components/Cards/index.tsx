@@ -1,12 +1,6 @@
 import "./index.css";
-<<<<<<< HEAD
-import { useState } from 'react';
-import { Card, Modal, Button } from 'react-bootstrap';
-
-=======
 import React, { useState } from 'react';
 import { Card, Modal } from 'react-bootstrap';
->>>>>>> e221a18bb3153f927b9ffce2b6ff9a9dac871f98
 
 interface Props {
   id: string,
