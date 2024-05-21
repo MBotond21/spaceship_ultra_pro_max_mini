@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+.header{
+    font-size: 48pt;
+    font-family: "Reddit Mono", monospace;
+    font-weight: 900;
+    line-height: 1em;
+    margin-top: 2em;
+}
+
+.emp{
+    font-size: 50pt;
+    color: red;
+}
