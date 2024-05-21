@@ -49,7 +49,7 @@ export function AddNew() {
                     </Col>
                     <Col md={6}>
                         <Form.Group className="mb-3" controlId="formWeight">
-                            <Form.Label>Súly</Form.Label>
+                            <Form.Label>Súly (tonna)</Form.Label>
                             <Form.Control
                                 type="number"
                                 name="weight"
@@ -63,7 +63,7 @@ export function AddNew() {
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-3" controlId="formHeight">
-                            <Form.Label>Magasság</Form.Label>
+                            <Form.Label>Magasság (méter)</Form.Label>
                             <Form.Control
                                 type="number"
                                 name="height"
@@ -75,7 +75,7 @@ export function AddNew() {
                     </Col>
                     <Col md={6}>
                         <Form.Group className="mb-3" controlId="formDiameter">
-                            <Form.Label>Átmérő</Form.Label>
+                            <Form.Label>Átmérő (méter)</Form.Label>
                             <Form.Control
                                 type="number"
                                 name="diameter"
@@ -89,7 +89,7 @@ export function AddNew() {
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-3" controlId="formThrust">
-                            <Form.Label>Tolóerő</Form.Label>
+                            <Form.Label>Tolóerő (kN)</Form.Label>
                             <Form.Control
                                 type="number"
                                 name="thrust"

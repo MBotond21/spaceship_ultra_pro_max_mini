@@ -22,7 +22,7 @@ interface SpaceStick {
   weight: number;
   height: number;
   diameter: number;
-  thrust: number;
+  trust: number;
   propellant: string;
   imgurl: string;
 }
