@@ -16,7 +16,16 @@ const firebaseConfig = {
   appId: "1:269417891713:web:c1704948aa653125b38a80",
   measurementId: "G-EZS57JY328"
 };
-
+interface SpaceStick {
+  id: string;
+  name: string;
+  weight: number;
+  height: number;
+  diameter: number;
+  thrust: number;
+  propellant: string;
+  imgurl: string;
+}
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -27,13 +36,13 @@ import { doc, setDoc, addDoc, collection, getDoc, getCountFromServer, getDocs } 
 export async function AddNewData(name : string, weight: number, height: number, diameter: number, trust: number, propellant: string, imgurl: string) {
   try {
     const docRef = await addDoc(collection(db, "spacesticks"), {
-      name: "test",
-      weight: 0,
-      height: 0,
-      diameter: 0,
-      trust: 0,
-      propellant: "test",
-      imgurl: "image link"
+      name: name,
+      weight: weight,
+      height: height,
+      diameter: diameter,
+      trust: trust,
+      propellant: propellant,
+      imgurl: imgurl
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
@@ -41,13 +50,15 @@ export async function AddNewData(name : string, weight: number, height: number, 
   }
 }
 
-export async function ListData() {
-
+export async function ListData(){
+  console.log("hi")
   const querySnapshot = await getDocs(collection(db, "spacesticks"));
+  
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     console.log(doc.id, " => ", doc.data());
   });
-
+  const dataList = querySnapshot.docs.map(doc => doc.data() as SpaceStick) ;
+  return dataList;
 }
 
