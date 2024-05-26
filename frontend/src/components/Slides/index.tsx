@@ -1,14 +1,22 @@
 import './index.css';
 
 export function Slides() {
-    var counter = 1;
-    setInterval(function()  {
-      (document.getElementById('radio'+ counter) as HTMLInputElement).checked = true;
-      counter++; 
+    var c = 1;
+    setInterval(function () {
+        try {
+            if(c < 1){
+                c = 1;
+            }
+            var inp = document.getElementById('radio' + c);
+            (inp as HTMLInputElement).checked = true;
+            c++;
 
-      if(counter>4){
-        counter=1
-      }
+            if (c > 4) {
+                c = 1
+            }
+        } catch(e){
+            c = 0;
+        }
 
     }, 5000);
 
@@ -25,10 +33,10 @@ export function Slides() {
                     <img src="https://wallpapercave.com/wp/wp7415167.jpg" alt="" />
                 </div>
                 <div className="slide">
-                    <img src="https://wallpapercave.com/wp/wp4053195.jpg" alt="" />
+                    <img src="https://wallpapercave.com/wp/wp7404538.jpg" alt="" />
                 </div>
                 <div className="slide">
-                    <img src="https://wallpapercave.com/wp/wp7404368.jpg" alt="" />
+                    <img src="https://wallpapercave.com/wp/wp6339347.jpg" alt="" />
                 </div>
                 <div className="slide">
                     <img src="https://wallpapercave.com/wp/wp7415179.jpg" alt="" />
